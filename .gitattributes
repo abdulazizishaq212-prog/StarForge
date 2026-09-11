@@ -1,12 +1,42 @@
+# StarForge - Language Breakdown
+# Rust:       ~72% - Core CLI application, plugins, and business logic
+# TypeScript: ~12% - Client bindings and web-based tooling
+# Python:     ~8%  - Script utilities and testing helpers
+# Go:         ~3%  - Alternative client library
+# Shell:      ~2%  - Build scripts and installation
+# YAML/TOML:  ~2%  - Configuration, CI/CD, and deployment
+# Markdown:   ~1%  - Documentation
+
 # Normalise binding snapshot golden files to LF so the snapshot comparison
 # (which rejects CR characters) is stable across Windows and Linux checkouts.
 tests/fixtures/snapshots/bindings_rust.rs      text eol=lf
 tests/fixtures/snapshots/bindings_typescript.ts text eol=lf
 tests/fixtures/snapshots/bindings_python.py    text eol=lf
 tests/fixtures/snapshots/bindings_go.go        text eol=lf
-*.rs  text eol=lf
-*.ts  text eol=lf
-*.py  text eol=lf
-*.go  text eol=lf
+
+# Source code files
+*.rs   text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.py   text eol=lf
+*.go   text eol=lf
+*.sh   text eol=lf
+
+# Configuration files
 *.toml text eol=lf
-*.md  text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+
+# Documentation
+*.md   text eol=lf
+
+# WASM
+*.wasm binary
+*.wasm linguist-vendored
+
+# Exclude these from language statistics
+*.lock linguist-generated
+Cargo.lock linguist-generated
+package-lock.json linguist-generated
+yarn.lock linguist-generated
